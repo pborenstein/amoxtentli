@@ -55,7 +55,7 @@ header {
 
 main {
   grid-area: main;
-  overflow: scroll;
+/*   overflow: scroll; */
 }
 
 /*  Navigation */
