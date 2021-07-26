@@ -1,0 +1,126 @@
+/* ----- styles.css ------ */
+
+:root {
+  --color-foreground: hsl(0, 0% ,07%);
+  --color-background: #fff;
+  --color-body:       var(--color-foreground);
+
+  --font-serif:       serif;
+  --font-sans-serif:  sans-serif;
+  --font-mono:        monospace;
+  --font-body:        var(--font-sans-serif);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  overflow: scroll;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-weight:  400;
+  line-height: 1.5;
+  color: var(--color-body);
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+/* ----- layout ------ */
+
+.one-col-grid {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1.3fr) minmax(37ch, 55ch) minmax(1rem, 1.3fr);
+  grid-template-rows: auto;
+  grid-row-gap: inherit;
+  grid-column-gap: inherit;
+  grid-template-areas:
+  "... head ..."
+  "... nav  ..."
+  "... main ..."
+  "... foot ...";
+  hyphens: auto;
+  overflow: hidden;
+}
+
+/*  page header */
+
+header {
+  display: grid;
+  grid-area: head;
+}
+
+
+/*  Main content */
+
+main {
+  grid-area: main;
+  overflow: scroll;
+}
+
+/*  Navigation */
+nav {
+  grid-area: nav;
+}
+
+
+/*  footer  */
+
+footer {
+  grid-area: foot;
+  border-top: 1px solid lightgray;
+  font-family: var(--font-sans-serif);
+}
+
+footer p {
+  margin: 0;
+  font-size: 60%;
+}
+footer p,
+footer p a {
+  color:#aaa;
+}
+
+
+/*  headings  */
+
+h1 {
+  font-family: var(--font-sans-serif);
+}
+
+
+
+.amoxtentli header {
+  font-family: var(--font-sans-serif);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.amoxtentli section {
+  font-weight: 200;
+  font-size:  .8em;
+  font-family: var(--font-sans-serif);
+  margin-bottom: 1em;
+}
+
+.amoxtentli footer {
+  grid-area: unset;
+  width: max-content;
+  font-family: var(--font-sans-serif);
+  font-weight: 200;
+  font-size:  .8em;
+  margin:  0;
+  border-top: 0.5px solid red;
+  padding: 0 0 0 0;
+}
+
+
+.amoxtentli li {
+  list-style: none;
+  margin-bottom: 2em
+}
+
+ul.amoxtentli {
+  padding: 0;
+}

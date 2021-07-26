@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>{{ config.siteName }}</h1>
+
+
+<ul class="amoxtentli">
+{%-for post in collections.amoxtentli | reverse -%}
+  <li><article >
+      <header>{{post.data.title}}</header>
+      <section>{{post.data.summary  | safe}}</section>
+      <footer><a href={{post.url}}>#</a> {{post.date.toDateString()}}</footer>
+  </article></li>
+{% endfor -%}
+</ul>
