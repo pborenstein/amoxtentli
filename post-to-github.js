@@ -44,7 +44,7 @@ function getSHA(path) {
       gRequest.url = path
   let response = http.request(gRequest)
 
-  /**/draft.append(`response.statusCode: ${response.statusCode}`)
+  console.log(`response.statusCode: ${response.statusCode}`)
 
   if (response.statusCode == 404)
     return false  // doesn't exist
@@ -61,8 +61,8 @@ function getSHA(path) {
 
 let sha = getSHA(url)
 
-draft.append(`url: ${url}`)
-draft.append(`sha: ${sha}`)
+console.log(`url: ${url}`)
+console.log(`sha: ${sha}`)
 
 
 
@@ -81,14 +81,14 @@ if (sha) {
 }
 
 
-draft.append(`gRequest: ${JSON.stringify(gRequest, null, 2)}`)
 
 
 if (!sha) {
-  draft.append(`will post as new`)
+  console.log(`will post as new`)
 } else {
-  draft.append(`overwrite existing`)
+  console.log(`overwrite existing`)
 }
+console.log(`gRequest: ${JSON.stringify(gRequest, null, 2)}`)
 
 let http = HTTP.create()
 let response = http.request(gRequest)
