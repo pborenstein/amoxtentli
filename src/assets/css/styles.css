@@ -1,11 +1,13 @@
 /* ----- styles.css ------ */
 
 :root {
-  --color-foreground: hsl(0, 0% ,07%);
-  --color-background: #fff;
+  --color-foreground: hsl(0, 0% , 07%);
+  --color-background: hsl(0, 0% , 95%);
   --color-body:       var(--color-foreground);
+  --color-link:       hsl(333, 62%, 27%);
+  --color-link-hover: hsl(249, 50%, 40%);
 
-  --font-serif:       serif;
+  --font-serif:       Spectral, Georgia, serif;
   --font-sans-serif:  sans-serif;
   --font-mono:        monospace;
   --font-body:        var(--font-sans-serif);
@@ -30,7 +32,7 @@ body {
 
 .one-col-grid {
   display: grid;
-  grid-template-columns: minmax(1rem, 1.3fr) minmax(37ch, 55ch) minmax(1rem, 1.3fr);
+  grid-template-columns: minmax(1rem, 1.3fr) minmax(25ch, 55ch) minmax(1rem, 1.3fr);
   grid-template-rows: auto;
   grid-row-gap: inherit;
   grid-column-gap: inherit;
@@ -55,7 +57,9 @@ header {
 
 main {
   grid-area: main;
-/*   overflow: scroll; */
+/*
+  overflow: scroll;
+ */
 }
 
 /*  Navigation */
@@ -70,11 +74,15 @@ footer {
   grid-area: foot;
   border-top: 1px solid lightgray;
   font-family: var(--font-sans-serif);
+  font-size:  .4em;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between ;
 }
 
 footer p {
   margin: 0;
-  font-size: 60%;
+  display: inline-block;
 }
 footer p,
 footer p a {
@@ -84,35 +92,49 @@ footer p a {
 
 /*  headings  */
 
+:root {
+  --color-heading:  hsl(220, 60%, 40%, 0.8);
+  --font-heading: 'Nova Script';
+  --font-heading: 'Comfortaa';
+  --font-heading: 'Mr De Haviland';
+  --font-heading: 'Oldenburg';
+  --font-heading: 'Permanent Marker';
+  --font-heading: 'Patrick Hand SC';
+  --font-heading: 'Beth Ellen';
+  --font-heading: 'Special Elite';
+}
+
+
+/***
+  naked h1: home page heading
+ ***/
+
 h1 {
-  font-family: var(--font-sans-serif);
-}
-
-
-
-.amoxtentli header {
-  font-family: var(--font-sans-serif);
-  font-weight: bold;
-  font-size: 1.2em;
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: 4rem;
   margin: 0;
-}
-
-.amoxtentli section {
-  font-weight: 200;
-  font-size:  .8em;
-  font-family: var(--font-sans-serif);
-  margin-bottom: 1em;
-}
-
-.amoxtentli footer {
-  grid-area: unset;
+  line-height: 1;
+  border-bottom: 1px solid var(--color-heading);
   width: max-content;
-  font-family: var(--font-sans-serif);
-  font-weight: 200;
-  font-size:  .8em;
-  margin:  0;
-  border-top: 0.5px solid red;
-  padding: 0 0 0 0;
+  margin-bottom: 2rem;
+}
+
+.post h1 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: 3rem;
+  margin: 0;
+  width: 100%;
+}
+
+
+/***
+  amoxtentli: ul container
+ ***/
+
+ul.amoxtentli {
+  padding: 0;
 }
 
 
@@ -121,6 +143,67 @@ h1 {
   margin-bottom: 2em
 }
 
-ul.amoxtentli {
-  padding: 0;
+
+.amoxtentli header,
+.amoxtentli header a,
+.amoxtentli header a:hover {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  font-size: 1.5rem !important;
+  color: var(--color-heading);
+  text-decoration: none;
+  margin: 0;
+}
+
+.amoxtentli section {
+  font-weight: 300;
+  font-size:  1em;
+  line-height: 1.63;
+  font-family: var(--font-serif);
+  margin-bottom: 1em;
+  letter-spacing: -0.02em;
+}
+
+.amoxtentli footer {
+  grid-area: unset;
+  width: max-content;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size:  .8em;
+  margin:  0;
+  border-top: 0.5px solid var(--color-heading);
+  padding: 0 0 0 0;
+  color: red;
+}
+
+.amoxtentli footer a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--color-heading);
+}
+
+.amoxtentli footer a:hover {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--color-link-hover);
+}
+
+
+/***
+  individual post pages
+ ***/
+
+.post h1 a {
+  text-decoration: none;
+  color: var(--color-heading);
+}
+
+.post footer,
+.post footer a {
+  color: #aaa;
+  text-decoration: none;
+  border-top: none;
+  font-family: var(--font-sans-serif);
+  font-weight: 200;
+  font-size:  1em;
 }

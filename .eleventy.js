@@ -7,6 +7,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("pdump", require("./js/pdump.js"))
 
+  // The ever-popular markdown filter.
+  eleventyConfig.addFilter("markdown", (content) => md.renderInline(content))
+
+  eleventyConfig.addFilter("debugger", (...args) => {
+    console.log('****')
+    console.log(...args)
+    console.log('----')
+
+    debugger;
+  })
+
 
   //  Everyone wants to hook into the
   //  markdown processor

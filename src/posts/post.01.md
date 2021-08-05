@@ -1,7 +1,8 @@
 ---
 title: from Tess of the d'Urbervilles
 date: 2021-04-26T05:28:38.057Z
-summary: A little way off there was another indistinct figure…
+summary:  "He served fire and smoke; these denizens of the fields served
+vegetation, weather, frost, and sun."
 ---
 
 Thomas Hardy

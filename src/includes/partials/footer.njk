@@ -1,2 +1,10 @@
-<p>Last updated {{page.date.toDateString()}}</p>
-<p><a href="{{pkg.repository}}">Source</a> for this site.</a>
+<p>Copyright &copy; 2021 Philip Borenstein<br>
+Made in New Hampshire</p>
+{% if not home %}
+<p>
+post: {{ date.toDateString() }}
+{% if draftDate %}
+<br><a href={{draft}}>draft:  {{draftDate.toDateString()}} </a>
+{% endif %}
+</p>
+{% endif %}

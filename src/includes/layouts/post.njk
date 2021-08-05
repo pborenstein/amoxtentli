@@ -1,8 +1,12 @@
 {% extends "layouts/base.njk" %}
 {% set pagetype = "post" %}
 {% block kontent %}
-  <article>
-    <h1>{{ title }}</h1>
+  <article class="post">
+    <h1><a href="/">{{ title | markdown }}</a></h1>
+    {% if newlines %}
+    {{ content | nl2br | safe }}
+    {% else %}
     {{ content | safe }}
+    {% endif %}
   </article>
 {% endblock %}

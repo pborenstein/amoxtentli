@@ -1,6 +1,6 @@
 // credentials.js
 
-const credential = Credential.create("tliltetl", "Credentials for tool to post to a repo");
+const credential = Credential.create("amoxtentli", "Credentials for tool to post to a repo");
 
 credential.addTextField('username', 'GitHub user name');
 credential.addPasswordField('key', "GitHub access token");

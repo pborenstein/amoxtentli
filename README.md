@@ -76,7 +76,7 @@ mm
     "branch": "main"
   },
   "headers": {
-    "Authorization": "token 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"
+    "Authorization": "token not-a-real-token_wMQ1uLiDWn2gz627WRPTgBjht0OZ2G1Z3OUL"
   }
 }
 error:
@@ -180,7 +180,7 @@ aa
     "branch": "main"
   },
   "headers": {
-    "Authorization": "token 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"
+    "Authorization": "token not-a-real-token_wMQ1uLiDWn2gz627WRPTgBjht0OZ2G1Z3OUL"
   }
 }
 error:
@@ -262,3 +262,8 @@ get the sha from the file
 ```
 
 
+## This is interesting
+
+```
+{{post.data.collections.amoxtentli[1].template.frontMatter.content  }}
+```
