@@ -198,6 +198,10 @@ ul.amoxtentli {
   color: var(--color-heading);
 }
 
+.post p {
+  overflow: scroll;
+}
+
 .post footer,
 .post footer a {
   color: #aaa;
