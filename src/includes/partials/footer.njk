@@ -2,9 +2,9 @@
 Made in New Hampshire</p>
 <p class="settings"><a href="/settings">&#x273C;</a></p>
 {% if not home %}
-<p><a href={{github}}>post:</a>{{ date.toDateString() }}
+<p><a href={{github}}>post:</a> {{date.toDateString()}}
 {% if draftDate %}
-  <br><a href={{draft}}>draft:</a>{{draftDate.toDateString()}}
+  <br><a href={{draft}}>draft:</a> {{draftDate.toDateString()}}
 {% endif %}
 </p>
 {% else %}

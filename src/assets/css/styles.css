@@ -23,17 +23,20 @@
   --lt-color-foreground:  hsl(0  ,  0%, 07%);
   --lt-color-background:  hsl(0  ,  0%, 85%);
   --lt-color-heading:     hsl(220, 60%, 40%, 0.8);
+  --lt-color-heading-50:  hsl(220, 60%, 40%, 0.4);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
   --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
-  --dk-color-heading:     var(--is-dark)  hsl(212, 80%, 42%);
+  --dk-color-heading:     var(--is-dark)  hsl(212, 80%, 42%, 0.8);
+  --dk-color-heading-50:  var(--is-dark)  hsl(212, 80%, 42%, 0.3);
 
   --color-foreground:     var(--dk-color-foreground, var(--lt-color-foreground));
   --color-background:     var(--dk-color-background, var(--lt-color-background));
   --color-heading:        var(--dk-color-heading   , var(--lt-color-heading));
+  --color-heading-50:     var(--dk-color-heading-50, var(--lt-color-heading-50));
 
   --color-body:       var(--color-foreground);
-  --color-link:       hsl(333, 62%, 27%);
+  --color-link:       var(--color-heading);
   --color-link-hover: hsl(249, 50%, 40%);
 
   --font-serif:       Spectral, Georgia, serif;
@@ -110,10 +113,10 @@ nav {
 
 footer {
   grid-area: foot;
-  border-top: 1px solid var(--color-heading);
-  font-family: var(--font-sans-serif);
-  font-size:  .4em;
-  font-weight: 200;
+  border-top: 1px solid var(--color-heading-50);
+  font-family: var(--font-heading);
+  font-size:  .6em;
+  font-weight: 400;
   display: flex;
   justify-content: space-between ;
   margin-bottom: 7vh;
@@ -126,6 +129,7 @@ footer p {
 }
 footer p,
 footer p a {
+  text-decoration: none;
   color: var(--color-heading);
 }
 
