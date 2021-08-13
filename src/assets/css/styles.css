@@ -22,7 +22,7 @@
 :root {
   --lt-color-foreground:  hsl(0  ,  0%, 07%);
   --lt-color-background:  hsl(0  ,  0%, 95%);
-  --lt-color-heading:     hsl(220, 60%, 40%, 0.7);
+  --lt-color-heading:     hsl(  0,  0%, 42%, 1.0);
   --lt-color-heading-50:  hsl(220, 60%, 40%, 0.4);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
@@ -40,7 +40,7 @@
   --color-link-hover: var(--color-heading-50);
 
   --font-serif:       Spectral, Georgia, serif;
-  --font-sans-serif:  'neue-kabel', sans-serif;
+  --font-sans-serif:  'Helvetica Neue', Helvetica, sans-serif;
   --font-mono:        monospace;
   --font-body:        var(--font-serif);
 }
@@ -125,8 +125,8 @@ nav {
 
 footer {
   grid-area: foot;
-  border-top: 1px solid var(--color-heading-50);
-  font-family: var(--font-heading);
+  border-top: 1px solid var(--color-heading);
+  font-family: var(--font-sans-serif);
   font-size:  .6em;
   font-weight: 400;
   display: flex;
