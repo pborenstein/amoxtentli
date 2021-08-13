@@ -1,8 +1,37 @@
 /* ----- styles.css ------ */
 
+
 :root {
-  --color-foreground: hsl(0, 0% , 07%);
-  --color-background: hsl(0, 0% , 95%);
+	--true: ;
+	--false: initial;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --is-dark: var(--true);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --is-dark: var(--false);
+  }
+}
+
+:root {
+  --lt-color-foreground:  hsl(0  ,  0%, 07%);
+  --lt-color-background:  hsl(0  ,  0%, 85%);
+  --lt-color-heading:     hsl(220, 60%, 40%, 0.8);
+
+  --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
+  --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
+  --dk-color-heading:     var(--is-dark)  hsl(212, 80%, 42%);
+
+  --color-foreground:     var(--dk-color-foreground, var(--lt-color-foreground));
+  --color-background:     var(--dk-color-background, var(--lt-color-background));
+  --color-heading:        var(--dk-color-heading   , var(--lt-color-heading));
+
   --color-body:       var(--color-foreground);
   --color-link:       hsl(333, 62%, 27%);
   --color-link-hover: hsl(249, 50%, 40%);
@@ -12,6 +41,19 @@
   --font-mono:        monospace;
   --font-body:        var(--font-sans-serif);
 }
+
+
+:root {
+  --font-heading: 'Nova Script';
+  --font-heading: 'Comfortaa';
+  --font-heading: 'Mr De Haviland';
+  --font-heading: 'Oldenburg';
+  --font-heading: 'Permanent Marker';
+  --font-heading: 'Patrick Hand SC';
+  --font-heading: 'Beth Ellen';
+  --font-heading: 'Special Elite';
+}
+
 
 html {
   box-sizing: border-box;
@@ -57,9 +99,7 @@ header {
 
 main {
   grid-area: main;
-/*
-  overflow: scroll;
- */
+  /* overflow: scroll; */
 }
 
 /*  Navigation */
@@ -72,12 +112,14 @@ nav {
 
 footer {
   grid-area: foot;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid var(--color-heading);
   font-family: var(--font-sans-serif);
   font-size:  .4em;
   font-weight: 200;
   display: flex;
   justify-content: space-between ;
+  margin-bottom: 7vh;
+  padding-top: 1em;
 }
 
 footer p {
@@ -86,24 +128,17 @@ footer p {
 }
 footer p,
 footer p a {
-  color:#aaa;
+  color: var(--color-heading);
 }
 
+.button-bar {
+  display: flex;
+  justify-content: space-between ;
+  margin-top: 1em;
+  margin-right: 50vh
+}
 
 /*  headings  */
-
-:root {
-  --color-heading:  hsl(220, 60%, 40%, 0.8);
-  --font-heading: 'Nova Script';
-  --font-heading: 'Comfortaa';
-  --font-heading: 'Mr De Haviland';
-  --font-heading: 'Oldenburg';
-  --font-heading: 'Permanent Marker';
-  --font-heading: 'Patrick Hand SC';
-  --font-heading: 'Beth Ellen';
-  --font-heading: 'Special Elite';
-}
-
 
 /***
   naked h1: home page heading
@@ -115,7 +150,6 @@ h1 {
   font-size: 3rem;
   margin: 0;
   line-height: 1;
-  border-bottom: 1px solid var(--color-heading);
   width: max-content;
   margin-bottom: 2rem;
 }
@@ -198,8 +232,13 @@ ul.amoxtentli {
   color: var(--color-heading);
 }
 
-.post p {
-  overflow: scroll;
+.newlines p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.newlines p:first-of-type {
+  margin-top: revert;
 }
 
 .post footer,
@@ -210,4 +249,14 @@ ul.amoxtentli {
   font-family: var(--font-sans-serif);
   font-weight: 200;
   font-size:  1em;
+}
+
+.settings,
+.settings a {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.settings a:hover {
+  color: var(--color-foreground)
 }

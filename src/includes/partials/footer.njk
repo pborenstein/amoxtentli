@@ -1,10 +1,12 @@
 <p>Copyright &copy; 2021 Philip Borenstein<br>
 Made in New Hampshire</p>
+<p class="settings"><a href="/settings">&#x273C;</a></p>
 {% if not home %}
-<p>
-post: {{ date.toDateString() }}
+<p><a href={{github}}>post:</a>{{ date.toDateString() }}
 {% if draftDate %}
-<br><a href={{draft}}>draft:  {{draftDate.toDateString()}} </a>
+  <br><a href={{draft}}>draft:</a>{{draftDate.toDateString()}}
 {% endif %}
 </p>
+{% else %}
+<p>::<br>::</p>
 {% endif %}
