@@ -37,7 +37,7 @@
 
   --color-body:       var(--color-foreground);
   --color-link:       var(--color-heading);
-  --color-link-hover: hsl(249, 50%, 40%);
+  --color-link-hover: var(--color-heading-50);
 
   --font-serif:       Spectral, Georgia, serif;
   --font-sans-serif:  'neue-kabel', sans-serif;
@@ -70,6 +70,18 @@ body {
   background-color: var(--color-background);
   scroll-behavior: smooth;
 }
+
+
+a,
+a:visited
+ {
+  color: var(--color-link);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
 
 /* ----- layout ------ */
 
@@ -191,6 +203,7 @@ ul.amoxtentli {
   margin: 0;
 }
 
+
 .amoxtentli section {
   font-weight: 300;
   font-size:  1em;
@@ -209,7 +222,7 @@ ul.amoxtentli {
   margin:  0;
   border-top: 0.5px solid var(--color-heading);
   padding: 0 0 0 0;
-  color: red;
+  color: var(--color-link);
 }
 
 .amoxtentli footer a {
