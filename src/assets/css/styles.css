@@ -37,20 +37,18 @@
   --color-link-hover: hsl(249, 50%, 40%);
 
   --font-serif:       Spectral, Georgia, serif;
-  --font-sans-serif:  sans-serif;
+  --font-sans-serif:  'neue-kabel', sans-serif;
   --font-mono:        monospace;
-  --font-body:        var(--font-sans-serif);
+  --font-body:        var(--font-serif);
 }
 
 
 :root {
-  --font-heading: 'Nova Script';
   --font-heading: 'Comfortaa';
-  --font-heading: 'Mr De Haviland';
-  --font-heading: 'Oldenburg';
-  --font-heading: 'Permanent Marker';
-  --font-heading: 'Patrick Hand SC';
-  --font-heading: 'Beth Ellen';
+  --font-heading: 'Helvetica Neue';
+  --font-heading: 'neue-kabel';
+  --font-heading: 'Fredericka the Great';
+  --font-heading: 'Gloria Hallelujah';
   --font-heading: 'Special Elite';
 }
 
@@ -62,7 +60,7 @@ html {
 }
 
 body {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-weight:  400;
   line-height: 1.5;
   color: var(--color-body);
@@ -193,7 +191,7 @@ ul.amoxtentli {
   font-weight: 300;
   font-size:  1em;
   line-height: 1.63;
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   margin-bottom: 1em;
   letter-spacing: -0.02em;
 }
