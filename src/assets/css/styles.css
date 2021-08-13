@@ -27,7 +27,7 @@
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
   --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
-  --dk-color-heading:     var(--is-dark)  hsl(212, 80%, 42%, 0.8);
+  --dk-color-heading:     var(--is-dark)  hsl(212, 80%, 42%, 0.7);
   --dk-color-heading-50:  var(--is-dark)  hsl(212, 80%, 42%, 0.3);
 
   --color-foreground:     var(--dk-color-foreground, var(--lt-color-foreground));
@@ -74,7 +74,7 @@ body {
 
 a,
 a:visited
- {
+{
   color: var(--color-link);
 }
 
