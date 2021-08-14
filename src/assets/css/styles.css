@@ -23,12 +23,12 @@
   --lt-color-foreground:  hsl(0  ,  0%, 07%);
   --lt-color-background:  hsl(0  ,  0%, 95%);
   --lt-color-heading:     hsl(  0,  0%, 42%, 1.0);
-  --lt-color-heading-50:  hsl(220, 60%, 40%, 0.4);
+  --lt-color-heading-50:  hsl(  0,  0%, 72%, 1.0);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
   --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
   --dk-color-heading:     var(--is-dark)  hsl(  0,  0%, 72%, 1.0);
-  --dk-color-heading-50:  var(--is-dark)  hsl(212, 80%, 42%, 0.3);
+  --dk-color-heading-50:  var(--is-dark)  hsl(  0,  0%, 42%, 1.0);
 
   --color-foreground:     var(--dk-color-foreground, var(--lt-color-foreground));
   --color-background:     var(--dk-color-background, var(--lt-color-background));
@@ -49,9 +49,6 @@
 :root {
   --font-heading: 'Comfortaa';
   --font-heading: 'Helvetica Neue';
-  --font-heading: 'neue-kabel';
-  --font-heading: 'Fredericka the Great';
-  --font-heading: 'Gloria Hallelujah';
   --font-heading: 'Special Elite';
 }
 
@@ -127,23 +124,26 @@ footer {
   grid-area: foot;
   border-top: 1px solid var(--color-heading);
   font-family: var(--font-sans-serif);
-  font-size:  .6em;
-  font-weight: 400;
-  display: flex;
-  justify-content: space-between ;
+  font-weight: 200;
+  font-size: .66em;
   margin-bottom: 7vh;
-  padding-top: 1em;
 }
 
-footer p {
-  margin: 0;
-  display: inline-block;
+footer ul {
+  list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0;
+	margin: .5em 0;
 }
-footer p,
-footer p a {
+
+footer li,
+footer li a {
+  line-height: 1.6;
   text-decoration: none;
-  color: var(--color-heading);
 }
+
 
 .button-bar {
   display: flex;
