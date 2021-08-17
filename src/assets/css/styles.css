@@ -38,20 +38,17 @@
   --color-body:       var(--color-foreground);
   --color-link:       var(--color-heading);
   --color-link-hover: var(--color-heading-50);
-
-  --font-serif:       Spectral, Georgia, serif;
-  --font-sans-serif:  'Helvetica Neue', Helvetica, sans-serif;
-  --font-mono:        monospace;
-  --font-body:        var(--font-serif);
 }
 
 
 :root {
-  --font-heading: 'Comfortaa';
-  --font-heading: 'Helvetica Neue';
-  --font-heading: 'Special Elite';
+  --font-serif:       Spectral, Georgia, serif;
+  --font-sans-serif:  'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono:        monospace;
+  --font-logo:        john-doe, sans-serif;
+  --font-body:        var(--font-serif);
+  --font-heading:     var(--font-sans-serif);
 }
-
 
 html {
   box-sizing: border-box;
@@ -168,12 +165,23 @@ h1 {
   margin-bottom: 2rem;
 }
 
+h1.logo {
+  font-family: var(--font-logo);
+  font-weight: 400;
+}
+
 .post h1 {
-  font-family: var(--font-heading);
+  font-family: var(--font-logo);
   color: var(--color-heading);
   font-size: 3rem;
+  font-weight: 400;
   margin: 0;
   width: 100%;
+}
+
+.post h1 a {
+  text-decoration: none;
+  color: var(--color-heading);
 }
 
 
@@ -195,8 +203,8 @@ ul.amoxtentli {
 .amoxtentli header,
 .amoxtentli header a,
 .amoxtentli header a:hover {
-  font-family: var(--font-heading);
-  font-weight: normal;
+  font-family: var(--font-logo);
+  font-weight: 400;
   font-size: 1.5rem !important;
   color: var(--color-heading);
   text-decoration: none;
@@ -241,11 +249,6 @@ ul.amoxtentli {
 /***
   individual post pages
  ***/
-
-.post h1 a {
-  text-decoration: none;
-  color: var(--color-heading);
-}
 
 .newlines p {
   margin-top: 0;
