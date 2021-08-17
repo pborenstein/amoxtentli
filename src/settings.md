@@ -1,7 +1,7 @@
 ---
 date: 2018-01-02T12:34:56.123-05:00
 title: Hello, darkness
-layout: layouts/post.njk
+layout: post.njk
 newlines: true
 ---
 

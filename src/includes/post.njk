@@ -1,9 +1,9 @@
-{% extends "layouts/base.njk" %}
+{% extends "base.njk" %}
 {% block kontent %}
   <article class="post {{ "newlines" if newlines }}">
     <h1><a href="/">{{ title | markdown }}</a></h1>
     {% if newlines %}
-    {{ content | nl2br | safe }}
+    {{ content | nl2br | safe  }}
     {% else %}
     {{ content | safe }}
     {% endif %}

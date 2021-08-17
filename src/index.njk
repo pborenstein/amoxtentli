@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: base.njk
 home: true
 ---
 
@@ -12,7 +12,7 @@ home: true
       <header><a href={{post.url}}>{{post.data.title | markdown  | safe }}</a></header>
       <section>
       {% if post.data.summary %}
-        {{post.data.summary | markdown | safe}}
+        {{ post.data.summary | markdown | safe }}
       {% else %}
         no summary
       {% endif %}
