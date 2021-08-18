@@ -2,10 +2,14 @@
 date: 2018-01-02T12:34:56.123-05:00
 title: Hello, darkness
 layout: post.njk
-newlines: true
+newlines: false
 ---
 
-<div class="button-bar"><button class="btn btn-dark">Dark</button><button class="btn btn-light">Light</button><button class="btn btn-system">System</button></div>
+<div class="button-bar">
+  <button class="btn btn-dark">D</button>
+  <button class="btn btn-light">L</button>
+  <button class="btn btn-system">S</button>
+</div>
 
 Hello darkness, my old friend
 I've come to talk with you again

@@ -1,14 +1,22 @@
 <ul>
   <li>&copy; 2021 P Borenstein<br>Made in New Hampshire</li>
-  <li><a href="/settings">&#x273C;</a></li>
+  <li class="button-bar">
+    <button class="btn btn-dark">D</button>
+    <button class="btn btn-light">L</button>
+    <button class="btn btn-system">S</button>
+  </li>
   <li>
   {% if date and github %}
       post:
       <a href={{github}}>{{date.toDateString()}}</a><br>
+  {% else %}
+    ::<br>
   {% endif %}
   {% if draftDate and draft %}
       draft:
       <a href={{draft}}>{{draftDate.toDateString()}}</a>
+  {% else %}
+    ::
   {% endif %}
   </li>
 </ul>
