@@ -18,6 +18,11 @@ module.exports = function (eleventyConfig) {
     debugger;
   })
 
+  eleventyConfig.addCollection("byDraftDate", collectionAPI => {
+    let list = collectionAPI.getFilteredByTag('amoxtentli')
+                            .sort((a, b) => a.data.draftDate - b.data.draftDate)
+    return list
+  })
 
   //  Everyone wants to hook into the
   //  markdown processor
