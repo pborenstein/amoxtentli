@@ -341,4 +341,5 @@ img[src$=".svg"] {
 
 iframe {
   margin-top: 1em;
+  max-width: 100%;
 }
