@@ -2,10 +2,10 @@
 {% block kontent %}
   <article class="post {{ "newlines" if newlines }}">
     <h1><a href="/">{{ title | markdown }}</a></h1>
-    {% if newlines %}
-    {{ content | nl2br | safe  }}
-    {% else %}
-    {{ content | safe }}
-    {% endif %}
+    {% if newlines -%}
+      {{ content | nl2br | safe  }}
+    {%- else %}
+      {{ content | safe -}}
+    {%- endif %}
   </article>
 {% endblock %}

@@ -21,24 +21,24 @@
 </head>
 <body class="one-col-grid">
   <header>
-    {% block header %}
+    {%- block header -%}
       {% include "header.njk" ignore missing %}
-    {% endblock %}
-</header>
+    {%- endblock -%}
+  </header>
   <nav id="sitenav">
-    {% block nav %}
+    {%- block nav -%}
       {% include "nav.njk" ignore missing %}
-    {% endblock %}
-</nav>
+    {%- endblock -%}
+  </nav>
   <main>
     {% block kontent %}
       {{ content | safe }}
     {% endblock %}
   </main>
   <footer>
-    {% block footer %}
-      {% include "footer.njk" ignore missing %}
-    {% endblock %}
-</footer>
+    {% block footer -%}
+      {%- include "footer.njk" ignore missing -%}
+    {%- endblock -%}
+  </footer>
 </body>
 </html>
