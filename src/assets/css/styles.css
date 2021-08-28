@@ -81,7 +81,7 @@ a:hover {
 
 .one-col-grid {
   display: grid;
-  grid-template-columns: minmax(1rem, 1.3fr) minmax(25ch, 55ch) minmax(1rem, 1.3fr);
+  grid-template-columns: minmax(1rem, 1.3fr) minmax(25ch, 72ch) minmax(1rem, 1.3fr);
   grid-template-rows: auto;
   grid-row-gap: inherit;
   grid-column-gap: inherit;
