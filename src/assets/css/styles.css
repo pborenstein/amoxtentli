@@ -305,7 +305,7 @@ ul.amoxtentli {
   background-color: var(--color-background);
   color: var(--color-heading-alt);
   padding: 0 1em;
-  font-size: .4em;
+  font-size: inherit;
   cursor: pointer;
   display: inline-block;
   font-weight: 200;
