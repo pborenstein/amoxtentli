@@ -22,8 +22,8 @@
 :root {
   --lt-color-foreground:  hsl(  0,  0%, 07%);
   --lt-color-background:  hsl(  0,  0%, 95%);
-  --lt-color-heading:     hsl(  0,  0%, 42%, 1.0);
-  --lt-color-heading-alt: hsl(  0,  0%, 20%, 1.0);
+  --lt-color-heading:     hsl(  0,  0%, 20%, 1.0);
+  --lt-color-heading-alt: hsl(  0,  0%, 40%, 1.0);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
   --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
@@ -36,8 +36,8 @@
   --color-heading-alt:     var(--dk-color-heading-alt, var(--lt-color-heading-alt));
 
   --color-body:       var(--color-foreground);
-  --color-link:       var(--color-heading);
-  --color-link-hover: var(--color-heading-alt);
+  --color-link:       var(--color-heading-alt);
+  --color-link-hover: var(--color-heading);
 }
 
 
@@ -45,7 +45,7 @@
   --font-serif:       Spectral, Georgia, serif;
   --font-sans-serif:  'Helvetica Neue', Helvetica, sans-serif;
   --font-mono:        monospace;
-  --font-logo:        john-doe, sans-serif;
+  --font-logo:        'Helvetica Neue', Spectral, john-doe, sans-serif;
   --font-body:        var(--font-serif);
   --font-heading:     var(--font-sans-serif);
 }
@@ -162,16 +162,17 @@ h1 {
 
 h1.logo {
   font-family: var(--font-logo);
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 4rem;
 }
 
 .post h1 {
   font-family: var(--font-logo);
   color: var(--color-heading);
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
-  margin-bottom: .25em;
+  margin-bottom: 1em;
   width: 100%;
 }
 
@@ -211,12 +212,12 @@ ul.amoxtentli {
 .amoxtentli header,
 .amoxtentli header a,
 .amoxtentli header a:hover {
-  font-family: var(--font-logo);
-  font-weight: 400;
-  font-size: 1.5rem !important;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2rem !important;
   color: var(--color-heading);
   text-decoration: none;
-  margin: 0;
+  margin: 0.25em 0;
 }
 
 
@@ -226,30 +227,27 @@ ul.amoxtentli {
   line-height: 1.63;
   font-family: var(--font-body);
   margin-bottom: 1em;
-  letter-spacing: -0.02em;
 }
 
 .amoxtentli footer {
   grid-area: unset;
   width: max-content;
   font-family: var(--font-heading);
-  font-weight: 400;
-  font-size:  .8em;
-  margin:  0;
+  font-weight: 300;
+  font-size:  .625em;
+  margin:  0em 0;
   border-top: 0.5px solid var(--color-heading);
-  padding: 0 0 0 0;
+  padding: .25em 0 0 0;
   color: var(--color-link);
 }
 
 .amoxtentli footer a {
   text-decoration: none;
-  font-weight: 400;
-  color: var(--color-heading);
+  color: var(--color-link);
 }
 
 .amoxtentli footer a:hover {
   text-decoration: none;
-  font-weight: 400;
   color: var(--color-link-hover);
 }
 
