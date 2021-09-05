@@ -23,12 +23,12 @@
   --lt-color-foreground:  hsl(  0,  0%, 07%);
   --lt-color-background:  hsl(  0,  0%, 95%);
   --lt-color-heading:     hsl(  0,  0%, 10%, 1.0);
-  --lt-color-heading-alt: hsl(  0,  0%, 40%, 1.0);
+  --lt-color-heading-alt: hsl(  0,  0%, 20%, 1.0);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
   --dk-color-background:  var(--is-dark)  hsl(  0,  0%, 15%);
-  --dk-color-heading:     var(--is-dark)  hsl(  0,  0%, 72%, 1.0);
-  --dk-color-heading-alt: var(--is-dark)  hsl(  0,  0%, 62%, 1.0);
+  --dk-color-heading:     var(--is-dark)  hsl(  0,  0%, 90%, 1.0);
+  --dk-color-heading-alt: var(--is-dark)  hsl(  0,  0%, 75%, 1.0);
 
   --color-foreground:     var(--dk-color-foreground , var(--lt-color-foreground));
   --color-background:     var(--dk-color-background , var(--lt-color-background));
@@ -177,14 +177,14 @@ h1 {
 h1.logo {
   font-family: var(--font-logo);
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .post h1 {
   font-family: var(--font-logo);
   color: var(--color-heading);
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   margin-bottom: 1em;
   width: 100%;
@@ -197,9 +197,9 @@ h1.logo {
 
 h2, h3, h4, h5, h6 {
   font-family: var(--font-logo);
-  font-weight: normal;
   color: var(--color-heading-alt);
   margin-bottom: 0.5em;
+  font-weight: 700;
 }
 
 
