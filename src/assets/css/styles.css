@@ -38,6 +38,11 @@
   --color-body:       var(--color-foreground);
   --color-link:       var(--color-heading-alt);
   --color-link-hover: var(--color-heading);
+
+
+  --lt-weight-body:   400;
+  --dk-weight-body:   var(--is-dark) 200;
+  --weight-body:      var(--dk-weight-body, var(--lt-weight-body));
 }
 
 
@@ -58,7 +63,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-weight:  400;
+  font-weight:  var(--weight-body);
   font-size: 19px;
   line-height: 1.5;
   color: var(--color-body);
