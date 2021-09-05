@@ -22,7 +22,7 @@
 :root {
   --lt-color-foreground:  hsl(  0,  0%, 07%);
   --lt-color-background:  hsl(  0,  0%, 95%);
-  --lt-color-heading:     hsl(  0,  0%, 20%, 1.0);
+  --lt-color-heading:     hsl(  0,  0%, 10%, 1.0);
   --lt-color-heading-alt: hsl(  0,  0%, 40%, 1.0);
 
   --dk-color-foreground:  var(--is-dark)  hsl(  0,  0%, 80%);
@@ -71,6 +71,11 @@ body {
   scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
 
 a,
 a:visited
@@ -227,7 +232,7 @@ ul.amoxtentli {
   color: var(--color-heading);
   text-decoration: none;
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.125;
 }
 
 
@@ -236,7 +241,7 @@ ul.amoxtentli {
   font-size:  1em;
   line-height: 1.63;
   font-family: var(--font-body);
-  margin-bottom: 1em;
+  margin: 0.25em 0;
 }
 
 .amoxtentli footer {
@@ -246,7 +251,7 @@ ul.amoxtentli {
   font-weight: 300;
   font-size:  .625em;
   margin:  0em 0;
-  border-top: 0.5px solid var(--color-heading);
+  border-top: 0.5px solid var(--color-heading-alt);
   padding: .25em 0 0 0;
   color: var(--color-link);
 }
