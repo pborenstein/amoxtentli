@@ -1,6 +1,6 @@
 ---
 title: lunch
-date: 2021-08-25T17:58:33.583Z
+date: 2021-09-05T03:51:56.012Z
 draftDate: 2021-08-25T17:43:07.848Z
 draft: drafts5://open?uuid=8DE73AC2-8ACD-4CEE-B07A-FDD4856C4DF9
 github: https://github.com/pborenstein/amoxtentli/blob/main/src/posts/8de73ac2-8acd-4cee-b07a-fdd4856c4df9.md
