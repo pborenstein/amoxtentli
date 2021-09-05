@@ -149,6 +149,10 @@ footer li a {
 }
 
 
+hr {
+  border-top: 1px solid var(--color-heading-alt);
+}
+
 /*  headings  */
 
 /***
@@ -222,12 +226,13 @@ ul.amoxtentli {
   font-size: 2rem !important;
   color: var(--color-heading);
   text-decoration: none;
-  margin: 0.25em 0;
+  margin: 0;
+  line-height: 1.25;
 }
 
 
 .amoxtentli section {
-  font-weight: 300;
+  font-weight: var(--weight-body);
   font-size:  1em;
   line-height: 1.63;
   font-family: var(--font-body);
@@ -326,7 +331,7 @@ ul.amoxtentli {
  ***/
 
 img {
-  margin-top: 1em;
+  margin-top: 0.5em;
   max-width: 100%;
 }
 img[width] {
