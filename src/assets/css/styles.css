@@ -30,10 +30,10 @@
   --dk-color-heading:     var(--is-dark)  hsl(  0,  0%, 72%, 1.0);
   --dk-color-heading-alt: var(--is-dark)  hsl(  0,  0%, 62%, 1.0);
 
-  --color-foreground:     var(--dk-color-foreground, var(--lt-color-foreground));
-  --color-background:     var(--dk-color-background, var(--lt-color-background));
-  --color-heading:        var(--dk-color-heading   , var(--lt-color-heading));
-  --color-heading-alt:     var(--dk-color-heading-alt, var(--lt-color-heading-alt));
+  --color-foreground:     var(--dk-color-foreground , var(--lt-color-foreground));
+  --color-background:     var(--dk-color-background , var(--lt-color-background));
+  --color-heading:        var(--dk-color-heading    , var(--lt-color-heading));
+  --color-heading-alt:    var(--dk-color-heading-alt, var(--lt-color-heading-alt));
 
   --color-body:       var(--color-foreground);
   --color-link:       var(--color-heading-alt);
