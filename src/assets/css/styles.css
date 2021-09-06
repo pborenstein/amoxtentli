@@ -40,7 +40,7 @@
   --color-link-hover:     var(--color-heading);
 
   --lt-color-logo:        hsl(0, 58%, 33%, 1.0);
-  --dk-color-logo:        var(--is-dark)  hsl(0, 65%, 45%, 1.0);
+  --dk-color-logo:        var(--is-dark)  hsl(0, 72%, 36%, 1.0);
   --color-logo:           var(--dk-color-logo, var(--lt-color-logo));
 
   --lt-weight-body:       400;
