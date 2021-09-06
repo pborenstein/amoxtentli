@@ -35,24 +35,27 @@
   --color-heading:        var(--dk-color-heading    , var(--lt-color-heading));
   --color-heading-alt:    var(--dk-color-heading-alt, var(--lt-color-heading-alt));
 
-  --color-body:       var(--color-foreground);
-  --color-link:       var(--color-heading-alt);
-  --color-link-hover: var(--color-heading);
+  --color-body:           var(--color-foreground);
+  --color-link:           var(--color-heading-alt);
+  --color-link-hover:     var(--color-heading);
 
+  --lt-color-logo:        hsl(0, 58%, 33%, 1.0);
+  --dk-color-logo:        var(--is-dark)  hsl(0, 65%, 45%, 1.0);
+  --color-logo:           var(--dk-color-logo, var(--lt-color-logo));
 
-  --lt-weight-body:   400;
-  --dk-weight-body:   var(--is-dark) 300;
-  --weight-body:      var(--dk-weight-body, var(--lt-weight-body));
+  --lt-weight-body:       400;
+  --dk-weight-body:       var(--is-dark) 300;
+  --weight-body:          var(--dk-weight-body, var(--lt-weight-body));
 }
 
 
 :root {
-  --font-serif:       Spectral, Georgia, serif;
-  --font-sans-serif:  'Helvetica Neue', Helvetica, sans-serif;
-  --font-mono:        monospace;
-  --font-logo:        'Helvetica Neue', Spectral, john-doe, sans-serif;
-  --font-body:        var(--font-serif);
-  --font-heading:     var(--font-sans-serif);
+  --font-serif:           Spectral, Georgia, serif;
+  --font-sans-serif:      'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono:            monospace;
+  --font-logo:            'Helvetica Neue', Spectral, john-doe, sans-serif;
+  --font-body:            var(--font-serif);
+  --font-heading:         var(--font-sans-serif);
 }
 
 html {
@@ -134,7 +137,7 @@ footer {
   color: var(--color-heading-alt);
   font-family: var(--font-sans-serif);
   font-weight: 300;
-  font-size: .4em;
+  font-size: .5em;
   margin-bottom: 7vh;
 }
 
@@ -149,7 +152,7 @@ footer ul {
 
 footer li,
 footer li a {
-  line-height: 1.6;
+  line-height: 1.3;
   text-decoration: none;
 }
 
@@ -178,6 +181,7 @@ h1.logo {
   font-family: var(--font-logo);
   font-weight: 600;
   font-size: 3.5rem;
+  color: var(--color-logo);
 }
 
 .post h1 {
@@ -304,7 +308,8 @@ ul.amoxtentli {
 .button-bar {
   display: flex;
   justify-content: center ;
-  margin-top: 2em;
+  margin-top: 0.25em;
+  align-items: baseline;
 }
 
 
