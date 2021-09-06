@@ -21,8 +21,9 @@ module.exports = class Home {
 
     if (! summary ) {
       retval = stars
-    } else if (m && summary == '::') {
-      retval = `<img src="${m[1]}">`
+    } else if (m && summary.startsWith('::')) {
+      summary = this.markdown2(summary.slice(2))
+      retval = `<img src="${m[1]}">${summary}`
     } else {
       retval = this.markdown(summary)
     }

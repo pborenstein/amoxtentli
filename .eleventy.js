@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
 
   // The ever-popular markdown filter.
   eleventyConfig.addFilter("markdown", (content) => md.renderInline(content))
+  eleventyConfig.addFilter("markdown2", (content) => md.render(content))
 
   eleventyConfig.addFilter("debugger", (...args) => {
     console.log('****')
