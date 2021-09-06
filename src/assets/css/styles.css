@@ -41,7 +41,7 @@
 
 
   --lt-weight-body:   400;
-  --dk-weight-body:   var(--is-dark) 200;
+  --dk-weight-body:   var(--is-dark) 300;
   --weight-body:      var(--dk-weight-body, var(--lt-weight-body));
 }
 
