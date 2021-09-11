@@ -63,7 +63,8 @@ Draft.prototype.TA_metaDelete = function() {
 
 // credentials.js
 
-const credential = Credential.create("amoxtentli", "Credentials for tool to post to a repo");
+const credentialName = "amoxtentli"
+const credential = Credential.create(credentialName, "Credentials for tool to post to a repo");
 
 credential.addTextField('username', 'GitHub user name');
 credential.addPasswordField('key', "GitHub access token");
@@ -75,80 +76,69 @@ const githubKey  = credential.getValue('key');
 
 // prompt.js
 
-//  trim leading & trailing whitespace
-//  determine whether it's a one-liner
 
-draft.content = draft.content.trim()
+//  Get the draft's metadata
 
-const fOneline = (draft.lines.length == 1)
 const  tadLib = {
   metaPath: '/Library/Scripts/amoxtentli/config.json'
 }
 
-
 draft.TA_metaRead()
-
 let draftMetadata = draft.meta
 
-//  set up the prompt according to the rules
-//  for one-line drafts
+
+
+//  trim leading & trailing whitespace
+//  determine whether it's a one-liner
+
+draft.content = draft.content.trim()
+const fOneline = (draft.lines.length == 1)
+
+//  set up the prompt
 
 const prompt  = Prompt.create()
 
-prompt.title    = 'Post this draft'
-prompt.message  = ''
+      prompt.title    = 'Post this draft'
+      prompt.message  = ''
 
 
 //  titles have feelings
-//
-//  saved custom title
-//  single line stars
-//  display title
 
 const stars = "✼ ✼ ✼"
-let title = (draftMetadata && draftMetadata.title)
-          ? draftMetadata.title
-          : fOneline == 1
-          ? stars
-          : draft.displayTitle
+let title = (draftMetadata && draftMetadata.title)  // saved title?
+          ? draftMetadata.title     //    use it
+          : fOneline == 1           // one line?
+          ? stars                   //    use stars
+          : draft.displayTitle      // else displayTitle
 
 //  summaries are complicated
-//
-//  selected text
-//  saved custom summary
-//  single line self-summary
-//  240 characters
 
 let selectedText = editor.getSelectedText()
-let summary = selectedText
-              ? selectedText
-              : (draftMetadata && draftMetadata.summary)
-              ? draftMetadata.summary
-              : fOneline == 1
-              ? draft.content
-              : draft.bodyPreview(240)
+let summary = selectedText      // selected text?
+              ? selectedText    //   use it
+              : (draftMetadata && draftMetadata.summary)  // saved summary?
+              ? draftMetadata.summary     //  use saved summary
+              : fOneline == 1             // one-line draft?
+              ? draft.content             //   self-summary
+              : draft.bodyPreview(240)    // else a tweet's worth
+
+
 
 
 prompt.addTextField('title',   'Title',   title)
 prompt.addTextView( 'summary', 'Summary', summary)
 
 prompt.addSwitch(     'newlines', 'Preserve newlines',  (draftMetadata && draftMetadata.newlines) || false)
-prompt.addSwitch(     'trim',     'Trim first line',    (draftMetadata && draftMetadata.trim) || true)
-prompt.addTextField(  'repo',     'Repo name',          'amoxtentli')
-prompt.addTextField(  'path',     'Repo path',          'src/posts')
+prompt.addSwitch(     'trim',     'Trim first line',    (draftMetadata && draftMetadata.trim)     || true)
+prompt.addTextField(  'repo',     'Repo name',          (draftMetadata && draftMetadata.repo)     || 'amoxtentli')
+prompt.addTextField(  'path',     'Repo path',          (draftMetadata && draftMetadata.repoPath) || 'src/posts')
 
-prompt.addButton('OK',      'OK',     true)
-prompt.addButton('Delete',  'delete', false)
+prompt.addButton('OK',          'OK',     true)
+prompt.addButton('Reset meta',  'reset',  false)
+prompt.addButton('Delete',      'delete', false)
+
 
 // https://forums.getdrafts.com/t/script-step-post-to-github-without-working-copy/3594
-
-function pad(n) {
-  let str = String(n)
-  while (str.length < 2) {
-    str = `0${str}`
-  }
-  return str
-}
 
 function getSHA(http, path) {
   let response = http.request({ method: 'GET',
@@ -211,6 +201,7 @@ if (prompt.show()) {
   }
 
   const deletePost  = prompt.buttonPressed == 'delete'
+  const resetMeta   = prompt.buttonPressed == 'reset'
 
     //   time stamps
   const postTime    = new Date()
@@ -265,6 +256,7 @@ ${fm_content}
   console.log(JSON.stringify(request, null, 2))
 
   let postStatus = doPost(http, request)
+//   let postStatus = 201
 
   if (postStatus <= 250) {
     app.displaySuccessMessage(`Draft ${deletePost ? "deleted" : "posted" } on ${settings.repo} `)
@@ -276,13 +268,14 @@ ${fm_content}
 //  Should we really be doing this?
 //  Regardless of the postStatus?
 
-  if (deletePost) {
+  if (deletePost || resetMeta) {
     draft.TA_metaDelete()
-    draft.removeTag('amoxtentli')
+    draft.removeTag(settings.repo)
   } else {
-    draft.addTag('amoxtentli')
+    draft.addTag(settings.repo)
     draft.meta = settings
     draft.TA_metaWrite()
   }
-  draft.update()
+  if (!resetMeta)
+    draft.update()
 }
