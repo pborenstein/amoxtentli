@@ -1,5 +1,12 @@
 // amoxtentli.js
 
+// const credentialName = "amoxtentli"
+
+const tadLib = {
+  metaPath: `/Library/Scripts/t-${credentialName}.json`
+}
+
+
 
 // tad-meta.js
 // extracted from ThoughtAsylum's TADpole library
@@ -63,30 +70,23 @@ Draft.prototype.TA_metaDelete = function() {
 
 // credentials.js
 
-const credentialName = "amoxtentli"
+//  AT TOP: const credentialName = "amoxtentli"
 const credential = Credential.create(credentialName, "Credentials for tool to post to a repo");
 
-credential.addTextField('username', 'GitHub user name');
-credential.addPasswordField('key', "GitHub access token");
+      credential.addTextField('username', 'GitHub user name');
+      credential.addPasswordField('key', "GitHub access token");
 
-credential.authorize();
+      credential.authorize();
 
 const githubUser = credential.getValue('username');
 const githubKey  = credential.getValue('key');
 
 // prompt.js
 
-
 //  Get the draft's metadata
-
-const  tadLib = {
-  metaPath: '/Library/Scripts/amoxtentli/config.json'
-}
 
 draft.TA_metaRead()
 let draftMetadata = draft.meta
-
-
 
 //  trim leading & trailing whitespace
 //  determine whether it's a one-liner
@@ -99,8 +99,7 @@ const fOneline = (draft.lines.length == 1)
 const prompt  = Prompt.create()
 
       prompt.title    = 'Post this draft'
-      prompt.message  = ''
-
+      prompt.message  = `credentials: ${credentialName}`
 
 //  titles have feelings
 
@@ -188,7 +187,8 @@ function doPost(http, request ) {
 //    M A I N
 //  --------------
 
-if (prompt.show()) {
+
+function doMain() {
 
     //  settings are the things we persist
   let settings = {
@@ -200,8 +200,15 @@ if (prompt.show()) {
     summary    : prompt.fieldValues['summary'],
   }
 
+
+    //  if resetting metadata, just do that
+    //  and get the heck out of dodge
+  if (prompt.buttonPressed == 'reset') {
+    draft.TA_metaDelete()
+    return ;
+  }
+
   const deletePost  = prompt.buttonPressed == 'delete'
-  const resetMeta   = prompt.buttonPressed == 'reset'
 
     //   time stamps
   const postTime    = new Date()
@@ -216,8 +223,6 @@ if (prompt.show()) {
   const fm_summary  = settings.summary.replace(/"/g, '\\"')
   const fm_content  = fOneline ? fm_summary : draft.lines.slice(settings.trim ? 1 : 0).join('\n')
 
-
-
   const postContent = `---
 title: ${settings.title}
 date: ${postTime.toISOString()}
@@ -231,7 +236,6 @@ summary: "${fm_summary}"
 
 ${fm_content}
 `
-
 
     // P O S T I N G
 
@@ -256,7 +260,6 @@ ${fm_content}
   console.log(JSON.stringify(request, null, 2))
 
   let postStatus = doPost(http, request)
-//   let postStatus = 201
 
   if (postStatus <= 250) {
     app.displaySuccessMessage(`Draft ${deletePost ? "deleted" : "posted" } on ${settings.repo} `)
@@ -264,11 +267,7 @@ ${fm_content}
     app.displayErrorMessage(`Something went wrong (${postStatus})`)
   }
 
-
-//  Should we really be doing this?
-//  Regardless of the postStatus?
-
-  if (deletePost || resetMeta) {
+  if (deletePost) {
     draft.TA_metaDelete()
     draft.removeTag(settings.repo)
   } else {
@@ -276,6 +275,7 @@ ${fm_content}
     draft.meta = settings
     draft.TA_metaWrite()
   }
-  if (!resetMeta)
-    draft.update()
 }
+
+if (prompt.show())
+  doMain()
