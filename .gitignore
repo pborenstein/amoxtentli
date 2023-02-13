@@ -99,3 +99,6 @@ _site/
 dist
 package-lock.json
 
+
+# Local Netlify folder
+.netlify
